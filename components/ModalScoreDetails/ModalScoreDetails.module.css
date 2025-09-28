@@ -1,0 +1,32 @@
+.modalScoreDetails {
+    .modalContent {
+        h2 {
+            margin-bottom: 2rem;
+        }
+        > div {
+            h4 {
+                margin-bottom: 0.5rem;
+                color: var(--primary-alt);
+            }
+            &:not(:last-of-type) {
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #222935;
+            }
+            p {
+                line-height: 1.6;
+                font-size: 0.9rem;
+            }
+            ul {
+                font-size: 0.9rem;
+                margin-left: 1.5rem;
+                list-style: disc;
+                margin-bottom: 1rem;
+                color: var(--foreground-grey);
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    }
+}

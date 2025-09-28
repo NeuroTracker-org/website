@@ -1,0 +1,226 @@
+.globalHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                &:first-of-type {
+                    height: 30px;
+                }
+
+                &:last-of-type {
+                    height: 18px;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            li {
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                cursor: pointer;
+                line-height: 1;
+                padding: 7px 4px 4px 4px;
+
+                &.active {
+                    border-bottom: 2px solid var(--primary);
+                }
+            }
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background);
+        opacity: 0;
+        backdrop-filter: blur(4px);
+        z-index: -1;
+    }
+
+    &.scrolled {
+        &:after {
+            opacity: .95;
+        }
+    }
+}
+
+
+.searchContainer {
+    width: 360px;
+}
+
+@media screen and (max-width: 1300px) {
+    .searchContainer {
+        width: 230px;
+    }
+    .globalHeader {
+        nav {
+            ul {
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+
+
+
+.mobileMenuIcon {
+    position: absolute;
+    cursor: pointer;
+    height: 44px;
+    width: 44px;
+    background: radial-gradient(circle at center, var(--primary) 0%, #0044ff00 100%);
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 0px 0px #0042ff;
+    color: var(--link);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    right: 5%;
+    top: 8px;
+    transition: 0.2s all ease-out;
+    display: none;
+
+    .bars {
+        width: 16px;
+        height: 2px;
+        background-color: currentColor;
+        position: relative;
+        transition: 0.2s all ease-out;
+        border-radius: 50px;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background-color: currentColor;
+            transition: 0.2s all ease-out;
+            border-radius: 50px;
+        }
+
+        &:before {
+            top: -5px;
+        }
+
+        &:after {
+            top: 5px;
+        }
+    }
+
+    &:hover {
+        color: var(--foreground);
+        background: radial-gradient(circle at center, var(--primary) 0%, #0042ff 100%);
+        box-shadow: 0 0 10px 1px #0042ff;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .globalHeader {
+        padding: 80px 3% 0 3%;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        .logo {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav {
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            ul {
+                display: none;
+            }
+        }
+
+        .searchContainer {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+
+    .mobileMenuIcon {
+        display: flex;
+    }
+
+    .menuOpen {
+        width: 100%;
+        height: 100dvh;
+        background-color: var(--background);
+        backdrop-filter: blur(10px);
+
+        .mobileMenuIcon {
+            position: fixed;
+
+            .bars {
+                background-color: transparent;
+
+                &:before {
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+
+                &:after {
+                    transform: rotate(-45deg);
+                    top: 0;
+                }
+            }
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            z-index: 9;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        .searchContainer {
+            display: flex;
+            width: 90%;
+            margin-top: 1rem;
+        }
+    }
+}

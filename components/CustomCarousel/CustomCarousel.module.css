@@ -1,0 +1,65 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navBtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:first-of-type {
+        left: -40px;
+    }
+
+    &:last-of-type {
+        right: -40px;
+    }
+
+    &.innerButtons {
+        top: auto;
+        position: static;
+        transform: none;
+        &:first-of-type {
+            left: 0;
+        }
+
+        &:last-of-type {
+            right: 0;
+        }
+    }
+}
+
+.navBtnDisabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.viewport {
+    overflow: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
+    cursor: grab;
+}
+
+.viewport:active,
+.dragging {
+    cursor: grabbing !important;
+}
+
+.track {
+    display: flex;
+    user-select: none;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.cell {
+    position: relative;
+}

@@ -1,0 +1,188 @@
+.proPage {
+    padding-top: 120px;
+    padding-bottom: 4rem;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .pageHeader {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.5rem 1rem;
+        background-color: var(--background-grey);
+        border: 1px solid #222935;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--foreground-grey);
+            max-width: 600px;
+        }
+    }
+
+    .arbreContainer {
+        padding: 1.5rem 1rem;
+        border: 1px solid #222935;
+        border-top: none;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .arbreNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+        padding: 1.5rem 1rem;
+        background-color: var(--background-grey);
+        border: 1px solid #222935;
+        border-top: none;
+        button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &:disabled {
+                opacity: 0.1;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .decisionResult {
+        h3 {
+            margin-bottom: .5rem;
+        }
+        a {
+            color: var(--link);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        > div {
+            margin-bottom: 2rem;
+        }
+        h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .resultBtn {
+        display: inline-block;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: 600;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        i {
+            font-size: .7em;
+        }
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    .questionText {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .optionsList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        button {
+            padding: 1rem 2rem;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .proPage {
+        padding-top: 100px;
+
+        .pageHeader {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .arbreContainer {
+            padding: 1rem;
+            min-height: 0;
+            padding: 2rem;
+        }
+
+        .arbreNav {
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .questionText {
+            font-size: 1.25rem;
+            margin: 0 0 1.5rem 0;
+            max-width: 90%;
+            text-align: left;
+        }
+
+        .optionsList {
+            gap: 1rem;
+            justify-content: flex-start;
+
+            button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .resultBtn {
+            margin-top: 0.5rem;
+            display: block;
+            a {
+                display: block;
+                font-size: 1.5rem;
+                i {
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}

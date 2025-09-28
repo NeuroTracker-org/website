@@ -1,0 +1,120 @@
+.pageTreatmentsCategory {
+    padding-top: 100px;
+
+    .treatmentList {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 16px;
+
+        .treatmentItem {
+            background-color: var(--background-grey);
+            border: 1px solid #222935;
+            flex: 1;
+
+            a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .content {
+                width: calc(100% - 48px);
+                padding: 1.5rem 2rem;
+            }
+
+            h2 {
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                i {
+                    font-size: 0.5em;
+                    color: var(--primary);
+                }
+            }
+
+            .brandsList {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+                gap: 8px;
+
+                label {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: var(--foreground-grey);
+                }
+            }
+
+            p {
+                max-width: 800px;
+                color: var(--foreground-grey);
+                margin-bottom: 1rem;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                display: flex;
+                align-items: center;
+                align-self: stretch;
+                justify-content: center;
+                width: 120px;
+                overflow: hidden;
+                background-color: #222935;
+            }
+
+            &:hover {
+                border-color: var(--primary);
+                background-color: var(--primary-alpha);
+                
+                button {
+                    background-color: var(--primary);
+                }
+
+                a {
+                    color: var(--foreground);
+
+                    i {
+                        color: var(--foreground);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    color: rgb(122, 131, 150);
+    margin-bottom: 2rem;
+
+    a {
+        color: var(--primary);
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        i {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+
+@keyframes bgPosX {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(500%);
+    }
+}

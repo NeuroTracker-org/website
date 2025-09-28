@@ -1,0 +1,108 @@
+.pagePathologiesCategory {
+    padding-top: 100px;
+
+    h1 {
+        margin-bottom: 3rem;
+    }
+
+    .pathologyList {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .pathologyItem {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            width: 100%;
+            background-color: var(--background-grey);
+            border: 1px solid #222935;
+
+            a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .content {
+                width: calc(100% - 48px);
+                padding: 1.5rem 2rem;
+            }
+
+            h2 {
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                i {
+                    font-size: 0.5em;
+                    color: var(--primary);
+                }
+            }
+
+            p {
+                max-width: 800px;
+                color: var(--foreground-grey);
+                margin-bottom: 1rem;
+            }
+
+            .pathologyLink {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                display: flex;
+                align-items: center;
+                align-self: stretch;
+                justify-content: center;
+                width: 120px;
+                overflow: hidden;
+                background-color: #222935;
+            }
+
+            &:hover {
+                border-color: var(--primary);
+                background-color: var(--primary-alpha);
+
+                .pathologyLink {
+                    background-color: var(--primary);
+
+                    i {
+                        color: var(--foreground);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    color: rgb(122, 131, 150);
+    margin-bottom: 2rem;
+
+    a {
+        color: var(--primary);
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        i {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+@keyframes bgPosX {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(500%);
+    }
+}

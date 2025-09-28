@@ -1,0 +1,10 @@
+.brainModelContainer {
+    width: 100dvw;
+    height: 100dvh;
+    background: transparent;
+
+    @media screen and (max-width: 1024px) {
+        width: 95dvw;
+        height: 95dvw;
+    }
+}
