@@ -46,7 +46,7 @@ export default function AnalysePage({ rows, treatmentsCount }) {
         if (typeof window === "undefined") return;
 
         const check = () => setIsMobile(window.innerWidth <= maxWidth);
-        check(); // on l'appelle une fois au montage
+        check(); // on l’appelle une fois au montage
         window.addEventListener("resize", check);
 
         return () => window.removeEventListener("resize", check);
@@ -197,7 +197,7 @@ export default function AnalysePage({ rows, treatmentsCount }) {
                     <div className="wrap XL">
                         <div className={styles.pageHeader}>
                             <h1>Analyse des traitements</h1>
-                            <p>Aucun traitement n'a encore été recensé pour la prise en charge des migraines et céphalées.</p>
+                            <p>Aucun traitement n’a encore été recensé pour la prise en charge des migraines et céphalées.</p>
                         </div>
                     </div>
                 </main>

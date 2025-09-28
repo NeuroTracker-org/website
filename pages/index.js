@@ -24,7 +24,7 @@ export default function Home() {
             <span>Tracker</span>
           </h1>
           <div className={styles.subContent}>
-            <p>NeuroTracker est une plateforme de suivi et d'analyse des données des traitements dans tous les troubles des migraines et céphalées.</p>
+            <p>NeuroTracker est une plateforme de suivi et d’analyse des données des traitements dans tous les troubles des migraines et céphalées.</p>
           </div>
           <div className={styles.buttonsContainer}>
             <button className={`${styles.ctaBtn}`}>
