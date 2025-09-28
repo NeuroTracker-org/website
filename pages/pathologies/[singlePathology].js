@@ -59,7 +59,7 @@ export default function SinglePathologyPage({ data, validCategories = [] }) {
           <div className={styles.pageHeader}>
             <p className={styles.breadcrumb}>
               <Link href="/pathologies">
-                <i className="far fa-arrow-left"></i>Pathologies
+                <i className="fas fa-arrow-left"></i>Pathologies
               </Link>{" "}
               / <span>{name}</span>
             </p>

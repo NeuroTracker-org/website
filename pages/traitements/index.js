@@ -84,7 +84,7 @@ export default function TreatmentsIndexPage({ groups, treatmentsCount }) {
                               href={`/traitements/${t.slug}`}
                               className={styles.treatmentLink}
                             >
-                              <i className="far fa-chevron-right"></i>
+                              <i className="fas fa-chevron-right"></i>
                               {t.molecule_name}
                             </Link>
                           </li>

@@ -6,6 +6,23 @@ function CustomCarousel({ children, visible = 6, gap = 12, innerButtons = false 
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
 
+  // ✅ Visible responsive
+  const [itemsVisible, setItemsVisible] = useState(visible);
+
+  useEffect(() => {
+    const updateVisible = () => {
+      if (window.innerWidth < 1024) {
+        setItemsVisible(1);
+      } else {
+        setItemsVisible(visible);
+      }
+    };
+
+    updateVisible(); // première exécution
+    window.addEventListener("resize", updateVisible);
+    return () => window.removeEventListener("resize", updateVisible);
+  }, [visible]);
+
   // Pour le drag & drop
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -40,14 +57,14 @@ function CustomCarousel({ children, visible = 6, gap = 12, innerButtons = false 
   const onPrev = () => {
     const el = viewportRef.current;
     if (!el) return;
-    const step = (el.clientWidth / visible) * visible;
+    const step = (el.clientWidth / itemsVisible) * itemsVisible;
     el.scrollBy({ left: -step, behavior: 'smooth' });
   };
 
   const onNext = () => {
     const el = viewportRef.current;
     if (!el) return;
-    const step = (el.clientWidth / visible) * visible;
+    const step = (el.clientWidth / itemsVisible) * itemsVisible;
     el.scrollBy({ left: step, behavior: 'smooth' });
   };
 
@@ -112,7 +129,7 @@ function CustomCarousel({ children, visible = 6, gap = 12, innerButtons = false 
       el.removeEventListener('touchmove', onTouchMove);
       el.removeEventListener('touchend', onTouchEnd);
     };
-  }, [visible]);
+  }, [itemsVisible]);
 
   const trackStyle = useMemo(() => ({ gap: `${gap}px` }), [gap]);
 
@@ -131,15 +148,22 @@ function CustomCarousel({ children, visible = 6, gap = 12, innerButtons = false 
         <div className={styles.track} style={trackStyle}>
           {Array.isArray(children)
             ? children.map((child, index) => (
-                <div className={styles.cell} key={index} style={{ flex: `0 0 calc(100% / ${visible} - ${gap}px + 1px)` }}>
-                  {child}
-                </div>
-              ))
+              <div
+                className={styles.cell}
+                key={index}
+                style={{ flex: `0 0 calc(100% / ${itemsVisible} - ${gap}px + 1px)` }}
+              >
+                {child}
+              </div>
+            ))
             : (
-                <div className={styles.cell} style={{ flex: `0 0 calc(100% / ${visible} - ${gap}px + 1px)` }}>
-                  {children}
-                </div>
-              )}
+              <div
+                className={styles.cell}
+                style={{ flex: `0 0 calc(100% / ${itemsVisible} - ${gap}px + 1px)` }}
+              >
+                {children}
+              </div>
+            )}
         </div>
       </div>
 

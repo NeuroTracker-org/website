@@ -168,7 +168,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
               <section className={styles.mainContent}>
 
                 <p className={styles.breadcrumb}>
-                  <Link href="/traitements"><i className="far fa-arrow-left"></i>Traitements</Link> / <span>{molecule_name}</span>
+                  <Link href="/traitements"><i className="fas fa-arrow-left"></i>Traitements</Link> / <span>{molecule_name}</span>
                 </p>
 
                 <div className={styles.pageTitle}>
@@ -186,7 +186,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
 
                 {categories.length > 0 && (
                   <div className={`${styles.section} ${styles.categoriesSection}`}>
-                    <label><i className="far fa-layer-group"></i> Catégories :</label>
+                    <label><i className="fas fa-layer-group"></i> Catégories :</label>
                     {
                       Array.isArray(categories) ? (
                         <ul className={styles.categories}>
@@ -208,7 +208,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
 
                 {brands.length > 0 && (
                   <div className={`${styles.section} ${styles.brandsSection}`}>
-                    <label><i className="far fa-tag"></i> Marques :</label>
+                    <label><i className="fas fa-tag"></i> Marques :</label>
                     {
                       Array.isArray(brands) ? (
                         <ul className={styles.brands}>
@@ -248,7 +248,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
                     <li key={index} className={styles.effect}>
                       <small>{effect.Fréquence}</small>
                       <p>{effect.Effet}</p>
-                      <Link href={effect.Source} target="_blank"><i className="far fa-external-link"></i></Link>
+                      <Link href={effect.Source} target="_blank"><i className="fas fa-external-link"></i></Link>
                     </li>
                   ))}
                 </ul>
@@ -263,7 +263,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
               </header>
               <ul>
                 <li className={styles.trials}><label>Nombre total d’essais</label><span>{totalEssais}</span></li>
-                <li className={styles.period}><label>Période</label><span>{minAnnee} <i className="far fa-arrow-right"></i> {maxAnnee}</span></li>
+                <li className={styles.period}><label>Période</label><span>{minAnnee} <i className="fas fa-arrow-right"></i> {maxAnnee}</span></li>
                 <li className={styles.count}><label>Effectif total</label> <span>{effectifTotal}</span></li>
                 <li className={`${styles.result}`}><label>Résultats cliniques</label>
                   <div>
@@ -271,7 +271,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
                   </div>
                 </li>
                 <li className={`${styles.score} ${scoreClass}`}>
-                  <button className={styles.scoreDetails} onClick={toggleScoreDetails}><i className="far fa-info"></i></button>
+                  <button className={styles.scoreDetails} onClick={toggleScoreDetails}><i className="fas fa-info"></i></button>
                   <label>Score global</label>
                   <div><span>{Number.isFinite(scoreGlobal) ? `${scoreGlobal}/100` : "—"}</span></div>
                 </li>

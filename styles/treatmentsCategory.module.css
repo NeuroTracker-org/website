@@ -71,7 +71,7 @@
             &:hover {
                 border-color: var(--primary);
                 background-color: var(--primary-alpha);
-                
+
                 button {
                     background-color: var(--primary);
                 }
@@ -82,6 +82,25 @@
                     i {
                         color: var(--foreground);
                     }
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .content {
+                    width: 100%;
+                }
+
+                a {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                button {
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem 1rem;
+                    font-size: 0.9rem;
+                    width: 100%;
                 }
             }
         }
@@ -104,6 +123,10 @@
         i {
             font-size: 0.8rem;
         }
+    }
+
+    @media screen and (max-width: 1024px) {
+        display: block;
     }
 }
 

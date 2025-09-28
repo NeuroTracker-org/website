@@ -7,25 +7,37 @@
 .navBtn {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     cursor: pointer;
     padding: 8px;
     position: absolute;
+    z-index: 2;
     top: 50%;
     transform: translateY(-50%);
+    background-color: var(--background);
+    border-radius: 50%;
 
     &:first-of-type {
         left: -40px;
+
+        @media screen and (max-width: 1024px) {
+            left: -20px;
+        }
     }
 
     &:last-of-type {
         right: -40px;
+
+        @media screen and (max-width: 1024px) {
+            right: -20px;
+        }
     }
 
     &.innerButtons {
         top: auto;
         position: static;
         transform: none;
+
         &:first-of-type {
             left: 0;
         }
@@ -46,6 +58,7 @@
     scroll-behavior: smooth;
     flex: 1;
     cursor: grab;
+    scroll-snap-type: x mandatory;
 }
 
 .viewport:active,
@@ -62,4 +75,5 @@
 
 .cell {
     position: relative;
+    scroll-snap-align: start;
 }

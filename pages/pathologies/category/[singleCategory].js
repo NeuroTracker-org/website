@@ -43,7 +43,7 @@ export default function PathologiesByCategoryPage({ category, pathologies }) {
                 <div className="wrap M">
                     <div className={styles.pageHeader}>
                         <p className={styles.breadcrumb}>
-                            <Link href="/pathologies"><i className="far fa-arrow-left"></i>Pathologies</Link> / <span>{category.label}</span>
+                            <Link href="/pathologies"><i className="fas fa-arrow-left"></i>Pathologies</Link> / <span>{category.label}</span>
                         </p>
                         <h1 className={styles.categoryTitle}>
                             {category.label}
@@ -70,7 +70,7 @@ export default function PathologiesByCategoryPage({ category, pathologies }) {
                                     </div>
 
                                     <button className={styles.pathologyLink}>
-                                        <i className="far fa-arrow-right"></i>
+                                        <i className="fas fa-arrow-right"></i>
                                     </button>
                                 </Link>
                             </li>

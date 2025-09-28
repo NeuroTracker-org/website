@@ -88,7 +88,7 @@ export default function PathologiesIndexPage({ groups }) {
                         {g.items.map((p) => (
                           <li key={p.slug} className={styles.pathologyItem}>
                             <Link href={`/pathologies/${p.slug}`} className={styles.pathologyLink}>
-                              <i className="far fa-chevron-right" />
+                              <i className="fas fa-chevron-right" />
                               {p.name}
                             </Link>
                           </li>

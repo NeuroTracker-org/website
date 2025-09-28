@@ -43,7 +43,7 @@ export default function TreatmentsByCategoryPage({ category, treatments }) {
 
           <div className={styles.pageHeader}>
             <p className={styles.breadcrumb}>
-              <Link href="/traitements"><i className="far fa-arrow-left"></i>Traitements</Link> / <span>{category.label}</span>
+              <Link href="/traitements"><i className="fas fa-arrow-left"></i>Traitements</Link> / <span>{category.label}</span>
             </p>
             <h1 className={styles.categoryTitle}>
               {category.label}
@@ -76,7 +76,7 @@ export default function TreatmentsByCategoryPage({ category, treatments }) {
                     )}
                   </div>
 
-                  <button><i className="far fa-chevron-right"></i></button>
+                  <button><i className="fas fa-chevron-right"></i></button>
                 </Link>
               </li>
             ))}

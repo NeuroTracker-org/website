@@ -73,6 +73,25 @@
                     }
                 }
             }
+
+            @media screen and (max-width: 1024px) {
+                .content {
+                    width: 100%;
+                }
+
+                a {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .pathologyLink {
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem 1rem;
+                    font-size: 0.9rem;
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -93,6 +112,10 @@
         i {
             font-size: 0.8rem;
         }
+    }
+
+    @media screen and (max-width: 1024px) {
+        display: block;
     }
 }
 
