@@ -140,14 +140,12 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
   const [showScoreDetails, setShowScoreDetails] = useState(false);
 
   const toggleScoreDetails = () => {
-    if (showScoreDetails) {
-      setShowScoreDetails(false);
-      document.body.style.overflow = "auto";
-    } else {
-      setShowScoreDetails(true);
-      document.body.style.overflow = "hidden";
-    }
-  }
+    setShowScoreDetails((prev) => {
+      const next = !prev;
+      document.body.style.overflow = next ? "hidden" : "auto";
+      return next;
+    });
+  };
 
   return (
     <>
@@ -241,7 +239,7 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
               <section className={`${styles.section} ${styles.sideEffectsSection}`}>
                 <header>
                   <h2>Effets indésirables</h2>
-                  <p>Les effets indésirables sont les réactions indésirables qui peuvent survenir lors de l'utilisation d'un traitement. Ils peuvent varier en fonction des individus et des traitements.</p>
+                  <p>Les effets indésirables sont les réactions indésirables qui peuvent survenir lors de l’utilisation d’un traitement. Ils peuvent varier en fonction des individus et des traitements.</p>
                 </header>
                 <ul className={styles.sideEffects}>
                   {effets_indesirables.map((effect, index) => (
