@@ -77,6 +77,8 @@ function TrialCard({ trial, index }) {
 }
 
 export default function SingleTreatmentPage({ data, scoreGlobal }) {
+  const [showScoreDetails, setShowScoreDetails] = useState(false);
+
   if (!data) {
     return (
       <main className={styles.pageSingleTreatment}>
@@ -137,15 +139,15 @@ export default function SingleTreatmentPage({ data, scoreGlobal }) {
           : styles.neutral
       : "neutral";
 
-  const [showScoreDetails, setShowScoreDetails] = useState(false);
-
   const toggleScoreDetails = () => {
-    setShowScoreDetails((prev) => {
-      const next = !prev;
-      document.body.style.overflow = next ? "hidden" : "auto";
-      return next;
-    });
-  };
+    if (showScoreDetails) {
+      setShowScoreDetails(false);
+      document.body.style.overflow = "auto";
+    } else {
+      setShowScoreDetails(true);
+      document.body.style.overflow = "hidden";
+    }
+  }
 
   return (
     <>
