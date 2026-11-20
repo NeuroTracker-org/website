@@ -1,0 +1,21 @@
+name: Déploiement production
+# Déploie sur le VPS OVH via le runner auto-hébergé « ovh-vps ».
+# Le runner n'a qu'un seul droit : lancer /usr/local/sbin/deploy-app pour CETTE application
+# (git pull de la branche main, npm install, build, pm2 restart). Aucun secret n'est nécessaire.
+# Déclenchement : push sur main, ou bouton « Run workflow » dans l'onglet Actions.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-neurotracker-website
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, ovh-vps]
+    timeout-minutes: 30
+    steps:
+      - name: Déployer neurotracker.org
+        run: sudo -n /usr/local/sbin/deploy-app neurotracker-website
